@@ -1,0 +1,26 @@
+TCP:
+SERVER:
+import java.net.*;
+import java.io.*;
+public class Server{
+public static void main(String args[])throws IOException{
+ServerSocket ss =new ServerSocket(5000);
+Socket s=ss.accept();
+System.out.println("connected");
+InputStreamReader in =new InputStreamReader(s.getInputStream());
+BufferedReader bf=new BufferedReader(in);
+String str=bf.readLine();
+System.out.println("client:"+str);
+}}
+
+
+CLIENT:
+import java.net.*;
+import java.io.*;
+public class client{
+public static void main(String args[])throws IOException{
+Socket s=new Socket("127.0.0.1",5000);
+PrintWriter pr=new PrintWriter(s.getOutputStream());
+pr.println("hello");
+pr.flush();
+}}
