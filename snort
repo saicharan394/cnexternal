@@ -1,0 +1,9 @@
+//snort
+Sudo apt install snort
+Sudo ip link set ip_Adress promisc on
+Sudo snort -A console ip_Address-c/etc/snort/snort.conf\
+//tcpdump
+Sudo tcpdump
+Sudo tcpdump -c 4 ip_sdress
+Sudo tcpdump -c 10 -i ipadress
+Dumpcap -D
